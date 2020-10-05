@@ -1,30 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
 int n;
-int ar[3100], dar[3100];
+int ar[3100], ar1[3100];
 
 
 int main() {
 
     while(scanf("%d", &n) == 1) {
-            bool joy=true;
+            bool ans=true;
         for(int i = 0; i < n; i++){
             scanf("%d", &ar[i]);
         }
 
         for(int i = 0; i < n - 1; i++){
-        dar[i] = abs(ar[i + 1] - ar[i]);
+        ar1[i] = abs(ar[i + 1] - ar[i]);
         }
 
-    sort(dar, dar + n - 1);
+    sort(ar1, ar1 + n - 1);
 
     for(int i = 0; i < n - 1; i++)
 
-        if(dar[i] != i + 1) {
-            joy=false;
+        if(ar1[i] != i + 1) {
+            ans=false;
         }
 
-        if(joy==false){
+        if(ans==false){
     printf("Not jolly\n");
         }
 
